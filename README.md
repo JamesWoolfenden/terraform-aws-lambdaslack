@@ -2,10 +2,9 @@
 
 [![Slalom][logo]](https://slalom.com)
 
-terraform-aws-codepipeline [![Build Status](https://travis-ci.com/madsalamanders/terraform-aws-lambdaslack.svg?branch=master)](https://travis-ci.com/madsalamanders/terraform-aws-lambdaslack) [![Latest Release](https://img.shields.io/github/release/madsalamanders/terraform-aws-lambdaslack.svg)](https://github.com/JamesWoolfenden/terraform-aws-codepipeline/releases/latest)
+terraform-aws-lambdaslack [![Build Status](https://travis-ci.com/madsalamanders/terraform-aws-lambdaslack.svg?branch=master)](https://travis-ci.com/madsalamanders/terraform-aws-lambdaslack) [![Latest Release](https://img.shields.io/github/release/madsalamanders/terraform-aws-lambdaslack.svg)](https://github.com/madsalamanders/terraform-aws-lambdaslack/releases/latest)
 
-Terraform module to provision an AWS [`codepipeline`](https://aws.amazon.com/codepipeline/) CI/CD system.
-The module also creates the build itself and and the example sets a deployment up for a fargate project.
+Terraform module to provision an Lambda based integration to Slack, it can take any number of different lambda triggers and convert them into slack messages. It is modified version of the Cloud formation of https://github.com/arabold/aws-to-slack.
 
 ---
 
@@ -19,8 +18,13 @@ Include this repository as a module in your existing terraform code:
 
 ```hcl
 module "lambdaslack" {
-  source                 = "github.com/madsalamanders/terraform-aws-lambdaslack"
-  version                = "0.1.1"
+  source         = "github.com/madsalamanders/terraform-aws-lambdaslack"
+  version        = "0.1.1"
+  arns           = "${var.arns}"
+  common_tags    = "${var.common_tags}"
+  rules          = "${var.rules}"
+  SLACK_CHANNEL  = "${var.SLACK_CHANNEL}"
+  SLACK_HOOK_URL = "${var.SLACK_HOOK_URL}"
 }
 ```
 
@@ -50,7 +54,7 @@ Available targets:
 
 Check out these related projects.
 
-- [Cloudformation lambda for slack](https://github.com/arabold/aws-to-slack) - MForward AWS CloudWatch Alarms and other notifications from Amazon SNS to Slack."
+- [Cloudformation lambda for slack](https://github.com/arabold/aws-to-slack) - Forward AWS CloudWatch Alarms and other notifications from Amazon SNS to Slack."
 
 ## Help
 

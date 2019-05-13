@@ -49,8 +49,7 @@ related:
 
 # Short description of this project
 description: |-
-  Terraform module to provision an AWS [`codepipeline`](https://aws.amazon.com/codepipeline/) CI/CD system.
-  The module also creates the build itself and and the example sets a deployment up for a fargate project.
+  Terraform module to provision an Lambda based integration to Slack, it can take any number of different lambda triggers and convert them into slack messages. It is modified version of the Cloud formation of https://github.com/arabold/aws-to-slack.
 
 # How to use this project
 usage: |-
@@ -58,8 +57,13 @@ usage: |-
 
   ```hcl
   module "lambdaslack" {
-    source                 = "github.com/madsalamanders/terraform-aws-lambdaslack"
-    version                = "0.1.1"
+    source         = "github.com/madsalamanders/terraform-aws-lambdaslack"
+    version        = "0.1.1"
+    arns           = "${var.arns}"
+    common_tags    = "${var.common_tags}"
+    rules          = "${var.rules}"
+    SLACK_CHANNEL  = "${var.SLACK_CHANNEL}"
+    SLACK_HOOK_URL = "${var.SLACK_HOOK_URL}"
   }
   ```
 
