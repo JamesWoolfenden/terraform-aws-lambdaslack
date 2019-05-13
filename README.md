@@ -38,7 +38,8 @@ Available targets:
   help/short                          This help short screen
   lint                                Lint terraform code
 
-```markdown
+```
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -108,7 +109,7 @@ See [LICENSE](LICENSE) for full details.
 [linkedin]: https://www.linkedin.com/company/slalom-consulting/
 [twitter]: https://twitter.com/Slalom
 
-[share_twitter]: https://twitter.com/intent/tweet/?text=terraform-aws-lambdaslackurl=https://github.com/madsalamanders/terraform-aws-lambdaslack
+[share_twitter]: https://twitter.com/intent/tweet/?text=terraform-aws-lambdaslack&url=https://github.com/madsalamanders/terraform-aws-lambdaslack
 [share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-aws-lambdaslack&url=https://github.com/madsalamanders/terraform-aws-lambdaslack
 [share_reddit]: https://reddit.com/submit/?url=https://github.com/madsalamanders/terraform-aws-lambdaslack
 [share_facebook]: https://facebook.com/sharer/sharer.php?u=https://github.com/madsalamanders/terraform-aws-lambdaslack

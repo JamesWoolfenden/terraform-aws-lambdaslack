@@ -44,7 +44,7 @@ badges:
 
 related:
   - name: "Cloudformation lambda for slack"
-    description: MForward AWS CloudWatch Alarms and other notifications from Amazon SNS to Slack."
+    description: Forward AWS CloudWatch Alarms and other notifications from Amazon SNS to Slack."
     url: "https://github.com/arabold/aws-to-slack"
 
 # Short description of this project
