@@ -6,11 +6,17 @@
 .terraform
 .idea
 *.iml
+*.orig
 .build-harness
 build-harness
+node_modules
 *.ini
+*.ZIP
 
 *~HEAD
 *backup
-
-*.orig
+*.ini
+tmp
+lambda
+*~HEAD
+*backup
