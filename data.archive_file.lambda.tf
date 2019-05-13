@@ -3,7 +3,7 @@ data "archive_file" "lambda" {
   source_dir  = "${path.module}/code/"
   output_path = "${path.module}/lambda.zip"
 
-  depends_on=[
-    "null_resource.node_modules"
+  depends_on = [
+    "null_resource.node_modules",
   ]
 }
