@@ -5,7 +5,7 @@
 #
 
 # Name of this project
-name: terraform-aws-codepipeline
+name: terraform-aws-lambdaslack
 
 # Tags of this project
 tags:

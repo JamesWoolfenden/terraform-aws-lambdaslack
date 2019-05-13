@@ -38,8 +38,7 @@ Available targets:
   help/short                          This help short screen
   lint                                Lint terraform code
 
-```
-
+```markdown
 ## Inputs
 
 | Name | Description | Type | Default | Required |
