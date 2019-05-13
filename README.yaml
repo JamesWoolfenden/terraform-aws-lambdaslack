@@ -12,7 +12,7 @@ tags:
   - aws
   - terraform
   - terraform-modules
-  - codepipeline
+  - slack
 
 # Categories of this project
 categories:
@@ -31,21 +31,21 @@ copyrights:
     year: "2019"
 
 # Canonical GitHub repo
-github_repo: jameswoolfenden/terraform-aws-codepipeline
+github_repo: madsalamanders/terraform-aws-lambdaslack
 
 # Badges to display
 badges:
   - name: "Build Status"
-    image: "https://travis-ci.com/JamesWoolfenden/terraform-aws-codepipeline.svg?branch=master"
-    url: "https://travis-ci.com/JamesWoolfenden/terraform-aws-codepipeline"
+    image: "https://travis-ci.com/madsalamanders/terraform-aws-lambdaslack.svg?branch=master"
+    url: "https://travis-ci.com/madsalamanders/terraform-aws-lambdaslack"
   - name: "Latest Release"
-    image: "https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-codepipeline.svg"
-    url: "https://github.com/JamesWoolfenden/terraform-aws-codepipeline/releases/latest"
+    image: "https://img.shields.io/github/release/madsalamanders/terraform-aws-lambdaslack.svg"
+    url: "https://github.com/madsalamanders/terraform-aws-lambdaslack/releases/latest"
 
 related:
-  - name: "terraform-aws-codebuild"
-    description: "Making a Build pipeline"
-    url: "https://github.com/jameswoolfenden/terraform-aws-codebuild"
+  - name: "Cloudformation lambda for slack"
+    description: MForward AWS CloudWatch Alarms and other notifications from Amazon SNS to Slack."
+    url: "https://github.com/arabold/aws-to-slack"
 
 # Short description of this project
 description: |-
@@ -57,22 +57,9 @@ usage: |-
   Include this repository as a module in your existing terraform code:
 
   ```hcl
-  module "codepipeline" {
-    source                 = "github.com/jameswoolfenden/terraform-aws-codepipeline"
-    version                ="0.1.1"
-    artifact_store         = "${var.artifact_store}"
-    bucketname             = "${lookup(var.artifact_store[0],"location")}"
-    build_timeout          = "${var.build_timeout}"
-    common_tags            = "${var.common_tags}"
-    description            = "${var.description}"
-    env                    = "${var.env}"
-    environment            = "${var.environment}"
-    force_artifact_destroy = "${var.force_artifact_destroy}"
-    name                   = "${var.name}"
-    projectroot            = "${var.projectroot}"
-    sourcecode             = "${var.sourcecode}"
-    stage                  = "${var.stage}"
-    type                   = "${var.type}"
+  module "lambdaslack" {
+    source                 = "github.com/madsalamanders/terraform-aws-lambdaslack"
+    version                = "0.1.1"
   }
   ```
 
