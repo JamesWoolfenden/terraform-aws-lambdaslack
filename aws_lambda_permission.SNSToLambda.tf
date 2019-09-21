@@ -5,6 +5,4 @@ resource "aws_lambda_permission" "SNSToLambda" {
   function_name = aws_lambda_function.awstoslack.function_name
   principal     = "sns.amazonaws.com"
   source_arn    = element(var.arns, count.index)
-
-  #qualifier     = "${aws_lambda_alias.test_alias.name}"
 }

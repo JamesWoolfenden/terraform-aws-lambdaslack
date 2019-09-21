@@ -8,5 +8,6 @@ rules = [
 "codecommit-repo"]
 
 arns = [
-  "arn:aws:sns:eu-west-1:12345567:codecommit_repo"
+  "arn:aws:sns:us-east-1:123456789012:mytopic",
+  "arn:aws:sns:eu-west-1:123455671231:codecommit_repo"
 ]

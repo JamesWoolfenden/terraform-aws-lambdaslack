@@ -4,11 +4,13 @@ variable "common_tags" {
 }
 
 variable "SLACK_CHANNEL" {
-  type = string
+  description = "Name of the SLACK Channel"
+  type        = string
 }
 
 variable "SLACK_HOOK_URL" {
-  type = string
+  description = "The Slack Webhook URL"
+  type        = string
 }
 
 variable "rules" {
@@ -17,4 +19,16 @@ variable "rules" {
 
 variable "arns" {
   type = list
+}
+
+variable "function_name" {
+  type        = string
+  description = "The name of the lambda function"
+  default     = "aws-to-slack-Handler"
+}
+
+variable "role_name" {
+  type        = string
+  description = "The name of the IAM role"
+  default     = "aws-to-slack-HandlerRole"
 }

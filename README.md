@@ -18,11 +18,11 @@ Include this repository as a module in your existing terraform code:
 module "lambdaslack" {
   source         = "github.com/madsalamanders/terraform-aws-lambdaslack"
   version        = "0.1.1"
-  arns           = "${var.arns}"
-  common_tags    = "${var.common_tags}"
-  rules          = "${var.rules}"
-  SLACK_CHANNEL  = "${var.SLACK_CHANNEL}"
-  SLACK_HOOK_URL = "${var.SLACK_HOOK_URL}"
+  arns           = var.arns
+  common_tags    = var.common_tags
+  rules          = var.rules
+  SLACK_CHANNEL  = var.SLACK_CHANNEL
+  SLACK_HOOK_URL = var.SLACK_HOOK_URL
 }
 ```
 
@@ -111,5 +111,4 @@ under the License.
 [share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-aws-lambdaslack&url=https://github.com/madsalamanders/terraform-aws-lambdaslack
 [share_reddit]: https://reddit.com/submit/?url=https://github.com/madsalamanders/terraform-aws-lambdaslack
 [share_facebook]: https://facebook.com/sharer/sharer.php?u=https://github.com/madsalamanders/terraform-aws-lambdaslack
-[share_googleplus]: https://plus.google.com/share?url=https://github.com/madsalamanders/terraform-aws-lambdaslack
 [share_email]: mailto:?subject=terraform-aws-lambdaslack&body=https://github.com/madsalamanders/terraform-aws-lambdaslack
