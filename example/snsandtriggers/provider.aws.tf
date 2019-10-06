@@ -1,12 +1,12 @@
 provider "aws" {
-  version = "2.9.0"
+  version = "2.29.0"
   region  = "eu-west-1"
 }
 
 provider "archive" {
-  version = "1.2"
+  version = "1.2.0"
 }
 
 provider "null" {
-  version = "2.1"
+  version = "2.1.2"
 }

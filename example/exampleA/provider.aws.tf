@@ -1,10 +1,10 @@
-provider "archive" {
-  version = "1.2"
+provider "aws" {
+  version = "2.29.0"
+  region  = "eu-west-1"
 }
 
-provider "aws" {
-  region  = "eu-west-1"
-  version = "2.29"
+provider "archive" {
+  version = "1.2.0"
 }
 
 provider "null" {
