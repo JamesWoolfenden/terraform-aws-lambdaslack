@@ -4,6 +4,6 @@ data "archive_file" "lambda" {
   output_path = "${path.module}/lambda.zip"
 
   depends_on = [
-    "null_resource.node_modules",
+    null_resource.node_modules
   ]
 }
