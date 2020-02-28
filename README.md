@@ -1,6 +1,11 @@
 [![Slalom][logo]](https://slalom.com)
 
-terraform-aws-lambdaslack [![Build Status](https://travis-ci.com/madsalamanders/terraform-aws-lambdaslack.svg?branch=master)](https://travis-ci.com/madsalamanders/terraform-aws-lambdaslack) [![Latest Release](https://img.shields.io/github/release/madsalamanders/terraform-aws-lambdaslack.svg)](https://github.com/madsalamanders/terraform-aws-lambdaslack/releases/latest)
+terraform-aws-lambdaslack
+
+[![Build Status](https://travis-ci.com/madsalamanders/terraform-aws-lambdaslack.svg?branch=master)](https://travis-ci.com/madsalamanders/terraform-aws-lambdaslack)
+[![Latest Release](https://img.shields.io/github/release/madsalamanders/terraform-aws-lambdaslack.svg)](https://github.com/madsalamanders/terraform-aws-lambdaslack/releases/latest)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![pre-commit](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
 
 Terraform module to provision an Lambda based integration to Slack, it can take any number of different lambda triggers and convert them into slack messages. It is modified version of the Cloud formation of https://github.com/arabold/aws-to-slack.
 
@@ -24,15 +29,30 @@ module "lambdaslack" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Providers
+
+| Name | Version |
+|------|---------|
+| archive | n/a |
+| aws | n/a |
+| null | n/a |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| SLACK_CHANNEL | - | string | - | yes |
-| SLACK_HOOK_URL | - | string | - | yes |
-| arns | - | list | - | yes |
-| common_tags | This is to help you add tags to your cloud objects | map | - | yes |
-| rules | - | list | - | yes |
+|------|-------------|------|---------|:-----:|
+| SLACK\_CHANNEL | Name of the SLACK Channel | `string` | n/a | yes |
+| SLACK\_HOOK\_URL | The Slack Webhook URL | `string` | n/a | yes |
+| arns | n/a | `list` | n/a | yes |
+| common\_tags | This is to help you add tags to your cloud objects | `map` | n/a | yes |
+| function\_name | The name of the lambda function | `string` | `"aws-to-slack-Handler"` | no |
+| role\_name | The name of the IAM role | `string` | `"aws-to-slack-HandlerRole"` | no |
+| rules | n/a | `list` | n/a | yes |
+
+## Outputs
+
+No output.
+
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Related Projects
 
@@ -54,7 +74,7 @@ Please use the [issue tracker](https://github.com/madsalamanders/terraform-aws-l
 
 ## Copyrights
 
-Copyright © 2019-2019 [Slalom, LLC](https://slalom.com)
+Copyright © 2019-2020 [Slalom, LLC](https://slalom.com)
 
 ## License
 
@@ -81,11 +101,10 @@ under the License.
 
 ### Contributors
 
-|  [![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage] |
-|---|
+[![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage]
 
-  [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
-  [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
+[jameswoolfenden_homepage]: https://github.com/jameswoolfenden
+[jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
 
 [logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
 [website]: https://slalom.com
