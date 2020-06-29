@@ -2,7 +2,7 @@
 
 terraform-aws-lambdaslack
 
-[![Build Status](https://travis-ci.com/madsalamanders/terraform-aws-lambdaslack.svg?branch=master)](https://travis-ci.com/madsalamanders/terraform-aws-lambdaslack)
+[![Build Status](https://github.com/madsalamanders/terraform-aws-lambdaslack/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/madsalamanders/terraform-aws-lambdaslack)
 [![Latest Release](https://img.shields.io/github/release/madsalamanders/terraform-aws-lambdaslack.svg)](https://github.com/madsalamanders/terraform-aws-lambdaslack/releases/latest)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![pre-commit](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
