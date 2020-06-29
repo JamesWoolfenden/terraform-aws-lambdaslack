@@ -32,3 +32,20 @@ variable "role_name" {
   description = "The name of the IAM role"
   default     = "aws-to-slack-HandlerRole"
 }
+
+variable "runtime" {
+  type    = string
+  default = "nodejs6.10"
+}
+
+variable "memory_size" {
+  default     = "256"
+  type        = string
+  description = "lambda ram"
+}
+
+variable "timeout" {
+  default     = "10"
+  type        = string
+  description = "lambda timeout"
+}

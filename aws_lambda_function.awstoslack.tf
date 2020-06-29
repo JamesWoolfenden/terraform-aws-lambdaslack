@@ -1,10 +1,10 @@
 resource "aws_lambda_function" "awstoslack" {
   function_name    = var.function_name
   handler          = "src/index.handler"
-  memory_size      = "256"
+  memory_size      = var.memory_size
   role             = aws_iam_role.awstoslack.arn
-  runtime          = "nodejs6.10"
-  timeout          = "10"
+  runtime          = var.runtime
+  timeout          = var.timeout
   filename         = "${path.module}\\lambda.zip"
   source_code_hash = data.archive_file.lambda.output_base64sha256
 
@@ -13,6 +13,10 @@ resource "aws_lambda_function" "awstoslack" {
       SLACK_CHANNEL  = var.SLACK_CHANNEL
       SLACK_HOOK_URL = var.SLACK_HOOK_URL
     }
+  }
+
+  tracing_config {
+    mode = "Active"
   }
 
   tags = var.common_tags

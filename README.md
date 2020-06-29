@@ -29,30 +29,7 @@ module "lambdaslack" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-## Providers
-
-| Name | Version |
-|------|---------|
-| archive | n/a |
-| aws | n/a |
-| null | n/a |
-
-## Inputs
-
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
-| SLACK\_CHANNEL | Name of the SLACK Channel | `string` | n/a | yes |
-| SLACK\_HOOK\_URL | The Slack Webhook URL | `string` | n/a | yes |
-| arns | n/a | `list` | n/a | yes |
-| common\_tags | This is to help you add tags to your cloud objects | `map` | n/a | yes |
-| function\_name | The name of the lambda function | `string` | `"aws-to-slack-Handler"` | no |
-| role\_name | The name of the IAM role | `string` | `"aws-to-slack-HandlerRole"` | no |
-| rules | n/a | `list` | n/a | yes |
-
-## Outputs
-
-No output.
-
+Error: no lines in file
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Related Projects
 
@@ -109,8 +86,8 @@ under the License.
 [logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
 [website]: https://slalom.com
 [github]: https://github.com/jameswoolfenden
-[linkedin]: https://www.linkedin.com/company/slalom-consulting/
-[twitter]: https://twitter.com/Slalom
+[linkedin]: https://www.linkedin.com/in/jameswoolfenden/
+[twitter]: https://twitter.com/JimWoolfenden
 
 [share_twitter]: https://twitter.com/intent/tweet/?text=terraform-aws-lambdaslack&url=https://github.com/madsalamanders/terraform-aws-lambdaslack
 [share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-aws-lambdaslack&url=https://github.com/madsalamanders/terraform-aws-lambdaslack
