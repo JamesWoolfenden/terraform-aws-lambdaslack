@@ -2,7 +2,7 @@
 
 terraform-aws-lambdaslack
 
-[![Build Status](https://travis-ci.com/madsalamanders/terraform-aws-lambdaslack.svg?branch=master)](https://travis-ci.com/madsalamanders/terraform-aws-lambdaslack)
+[![Build Status](https://github.com/madsalamanders/terraform-aws-lambdaslack/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/madsalamanders/terraform-aws-lambdaslack)
 [![Latest Release](https://img.shields.io/github/release/madsalamanders/terraform-aws-lambdaslack.svg)](https://github.com/madsalamanders/terraform-aws-lambdaslack/releases/latest)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![pre-commit](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
@@ -29,7 +29,37 @@ module "lambdaslack" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-Error: no lines in file
+## Requirements
+
+No requirements.
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| archive | n/a |
+| aws | n/a |
+| null | n/a |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| SLACK\_CHANNEL | Name of the SLACK Channel | `string` | n/a | yes |
+| SLACK\_HOOK\_URL | The Slack Webhook URL | `string` | n/a | yes |
+| arns | n/a | `list` | n/a | yes |
+| common\_tags | This is to help you add tags to your cloud objects | `map` | n/a | yes |
+| function\_name | The name of the lambda function | `string` | `"aws-to-slack-Handler"` | no |
+| memory\_size | lambda ram | `string` | `"256"` | no |
+| role\_name | The name of the IAM role | `string` | `"aws-to-slack-HandlerRole"` | no |
+| rules | n/a | `list` | n/a | yes |
+| runtime | n/a | `string` | `"nodejs6.10"` | no |
+| timeout | lambda timeout | `string` | `"10"` | no |
+
+## Outputs
+
+No output.
+
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Related Projects
 
