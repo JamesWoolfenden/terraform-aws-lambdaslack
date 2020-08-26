@@ -39,13 +39,13 @@ variable "runtime" {
 }
 
 variable "memory_size" {
-  default     = "256"
-  type        = string
+  default     = 256
+  type        = number
   description = "lambda ram"
 }
 
 variable "timeout" {
-  default     = "10"
-  type        = string
+  default     = 10
+  type        = number
   description = "lambda timeout"
 }

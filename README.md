@@ -5,7 +5,7 @@ terraform-aws-lambdaslack
 [![Build Status](https://github.com/madsalamanders/terraform-aws-lambdaslack/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/madsalamanders/terraform-aws-lambdaslack)
 [![Latest Release](https://img.shields.io/github/release/madsalamanders/terraform-aws-lambdaslack.svg)](https://github.com/madsalamanders/terraform-aws-lambdaslack/releases/latest)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-[![pre-commit](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
+[![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
 
 Terraform module to provision an Lambda based integration to Slack, it can take any number of different lambda triggers and convert them into slack messages. It is modified version of the Cloud formation of https://github.com/arabold/aws-to-slack.
 
@@ -50,11 +50,11 @@ No requirements.
 | arns | n/a | `list` | n/a | yes |
 | common\_tags | This is to help you add tags to your cloud objects | `map` | n/a | yes |
 | function\_name | The name of the lambda function | `string` | `"aws-to-slack-Handler"` | no |
-| memory\_size | lambda ram | `string` | `"256"` | no |
+| memory\_size | lambda ram | `number` | `256` | no |
 | role\_name | The name of the IAM role | `string` | `"aws-to-slack-HandlerRole"` | no |
 | rules | n/a | `list` | n/a | yes |
 | runtime | n/a | `string` | `"nodejs6.10"` | no |
-| timeout | lambda timeout | `string` | `"10"` | no |
+| timeout | lambda timeout | `number` | `10` | no |
 
 ## Outputs
 
