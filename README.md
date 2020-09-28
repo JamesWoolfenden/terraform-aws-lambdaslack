@@ -1,5 +1,3 @@
-[![Slalom][logo]](https://slalom.com)
-
 terraform-aws-lambdaslack
 
 [![Build Status](https://github.com/madsalamanders/terraform-aws-lambdaslack/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/madsalamanders/terraform-aws-lambdaslack)
@@ -29,38 +27,40 @@ module "lambdaslack" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Requirements
 
 No requirements.
 
 ## Providers
 
-| Name | Version |
-|------|---------|
-| archive | n/a |
-| aws | n/a |
-| null | n/a |
+| Name    | Version |
+| ------- | ------- |
+| archive | n/a     |
+| aws     | n/a     |
+| null    | n/a     |
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| SLACK\_CHANNEL | Name of the SLACK Channel | `string` | n/a | yes |
-| SLACK\_HOOK\_URL | The Slack Webhook URL | `string` | n/a | yes |
-| arns | n/a | `list` | n/a | yes |
-| common\_tags | This is to help you add tags to your cloud objects | `map` | n/a | yes |
-| function\_name | The name of the lambda function | `string` | `"aws-to-slack-Handler"` | no |
-| memory\_size | lambda ram | `number` | `256` | no |
-| role\_name | The name of the IAM role | `string` | `"aws-to-slack-HandlerRole"` | no |
-| rules | n/a | `list` | n/a | yes |
-| runtime | n/a | `string` | `"nodejs6.10"` | no |
-| timeout | lambda timeout | `number` | `10` | no |
+| Name           | Description                                        | Type     | Default                      | Required |
+| -------------- | -------------------------------------------------- | -------- | ---------------------------- | :------: |
+| SLACK_CHANNEL  | Name of the SLACK Channel                          | `string` | n/a                          |   yes    |
+| SLACK_HOOK_URL | The Slack Webhook URL                              | `string` | n/a                          |   yes    |
+| arns           | n/a                                                | `list`   | n/a                          |   yes    |
+| common_tags    | This is to help you add tags to your cloud objects | `map`    | n/a                          |   yes    |
+| function_name  | The name of the lambda function                    | `string` | `"aws-to-slack-Handler"`     |    no    |
+| memory_size    | lambda ram                                         | `number` | `256`                        |    no    |
+| role_name      | The name of the IAM role                           | `string` | `"aws-to-slack-HandlerRole"` |    no    |
+| rules          | n/a                                                | `list`   | n/a                          |   yes    |
+| runtime        | n/a                                                | `string` | `"nodejs6.10"`               |    no    |
+| timeout        | lambda timeout                                     | `number` | `10`                         |    no    |
 
 ## Outputs
 
 No output.
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Related Projects
 
 Check out these related projects.
@@ -81,7 +81,7 @@ Please use the [issue tracker](https://github.com/madsalamanders/terraform-aws-l
 
 ## Copyrights
 
-Copyright © 2019-2020 [Slalom, LLC](https://slalom.com)
+Copyright © 2019-2020 James Woolfenden
 
 ## License
 
@@ -90,19 +90,19 @@ Copyright © 2019-2020 [Slalom, LLC](https://slalom.com)
 See [LICENSE](LICENSE) for full details.
 
 Licensed to the Apache Software Foundation (ASF) under one
-or more contributor license agreements.  See the NOTICE file
+or more contributor license agreements. See the NOTICE file
 distributed with this work for additional information
-regarding copyright ownership.  The ASF licenses this file
+regarding copyright ownership. The ASF licenses this file
 to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
-with the License.  You may obtain a copy of the License at
+with the License. You may obtain a copy of the License at
 
 <https://www.apache.org/licenses/LICENSE-2.0>
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
 "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, either express or implied.  See the License for the
+KIND, either express or implied. See the License for the
 specific language governing permissions and limitations
 under the License.
 
@@ -112,13 +112,9 @@ under the License.
 
 [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
 [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
-
-[logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
-[website]: https://slalom.com
 [github]: https://github.com/jameswoolfenden
 [linkedin]: https://www.linkedin.com/in/jameswoolfenden/
 [twitter]: https://twitter.com/JimWoolfenden
-
 [share_twitter]: https://twitter.com/intent/tweet/?text=terraform-aws-lambdaslack&url=https://github.com/madsalamanders/terraform-aws-lambdaslack
 [share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-aws-lambdaslack&url=https://github.com/madsalamanders/terraform-aws-lambdaslack
 [share_reddit]: https://reddit.com/submit/?url=https://github.com/madsalamanders/terraform-aws-lambdaslack
