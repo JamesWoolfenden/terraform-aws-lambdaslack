@@ -27,33 +27,32 @@ module "lambdaslack" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
 ## Requirements
 
 No requirements.
 
 ## Providers
 
-| Name    | Version |
-| ------- | ------- |
-| archive | n/a     |
-| aws     | n/a     |
-| null    | n/a     |
+| Name | Version |
+|------|---------|
+| archive | n/a |
+| aws | n/a |
+| null | n/a |
 
 ## Inputs
 
-| Name           | Description                                        | Type     | Default                      | Required |
-| -------------- | -------------------------------------------------- | -------- | ---------------------------- | :------: |
-| SLACK_CHANNEL  | Name of the SLACK Channel                          | `string` | n/a                          |   yes    |
-| SLACK_HOOK_URL | The Slack Webhook URL                              | `string` | n/a                          |   yes    |
-| arns           | n/a                                                | `list`   | n/a                          |   yes    |
-| common_tags    | This is to help you add tags to your cloud objects | `map`    | n/a                          |   yes    |
-| function_name  | The name of the lambda function                    | `string` | `"aws-to-slack-Handler"`     |    no    |
-| memory_size    | lambda ram                                         | `number` | `256`                        |    no    |
-| role_name      | The name of the IAM role                           | `string` | `"aws-to-slack-HandlerRole"` |    no    |
-| rules          | n/a                                                | `list`   | n/a                          |   yes    |
-| runtime        | n/a                                                | `string` | `"nodejs6.10"`               |    no    |
-| timeout        | lambda timeout                                     | `number` | `10`                         |    no    |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| SLACK\_CHANNEL | Name of the SLACK Channel | `string` | n/a | yes |
+| SLACK\_HOOK\_URL | The Slack Webhook URL | `string` | n/a | yes |
+| arns | n/a | `list` | n/a | yes |
+| common\_tags | This is to help you add tags to your cloud objects | `map` | n/a | yes |
+| function\_name | The name of the lambda function | `string` | `"aws-to-slack-Handler"` | no |
+| memory\_size | lambda ram | `number` | `256` | no |
+| role\_name | The name of the IAM role | `string` | `"aws-to-slack-HandlerRole"` | no |
+| rules | n/a | `list` | n/a | yes |
+| runtime | n/a | `string` | `"nodejs6.10"` | no |
+| timeout | lambda timeout | `number` | `10` | no |
 
 ## Outputs
 
