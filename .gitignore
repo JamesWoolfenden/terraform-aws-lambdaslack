@@ -7,8 +7,8 @@
 .idea
 *.iml
 *.orig
-.build-harness
-build-harness
+.terraform.tfstate.lock.info
+.terraform.lock.hcl
 node_modules
 *.ini
 *.ZIP
