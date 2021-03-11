@@ -1,6 +1,6 @@
 variable "common_tags" {
   description = "This is to help you add tags to your cloud objects"
-  type        = map
+  type        = map(any)
 }
 
 variable "SLACK_CHANNEL" {
@@ -14,11 +14,11 @@ variable "SLACK_HOOK_URL" {
 }
 
 variable "rules" {
-  type = list
+  type = list(any)
 }
 
 variable "arns" {
-  type = list
+  type = list(any)
 }
 
 variable "function_name" {

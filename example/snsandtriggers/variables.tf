@@ -1,22 +1,22 @@
 variable "common_tags" {
   description = "This is to help you add tags to your cloud objects"
-  type        = "map"
+  type        = map(string)
 }
 
 variable "region" {}
 
 variable "SLACK_CHANNEL" {
-  type = "string"
+  type = string
 }
 
 variable "SLACK_HOOK_URL" {
-  type = "string"
+  type = string
 }
 
 variable "rules" {
-  type = "list"
+  type = list(string)
 }
 
 variable "arns" {
-  type = "list"
+  type = list(string)
 }
