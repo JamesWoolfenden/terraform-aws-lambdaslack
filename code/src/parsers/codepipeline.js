@@ -7,7 +7,7 @@ const BbPromise = require("bluebird"),
 class CodePipelineParser {
 
 	parse(event) {
-		return BbPromise.try(() => 
+		return BbPromise.try(() =>
 			JSON.parse(_.get(event, "Records[0].Sns.Message", "{}")))
 		.catch(_.noop) // ignore JSON errors
 		.then(message => {
@@ -18,12 +18,12 @@ class CodePipelineParser {
 			}
 
 			// Check that this is NOT an approval message (there is a separate handler for those...)
-			// NOTE: CodePipeline Action Execution State Changes that are APPROVALs are handled here, 
+			// NOTE: CodePipeline Action Execution State Changes that are APPROVALs are handled here,
 			//       only ignore the dedicated Approval request notifications
 			if (_.has(message, "approval") && _.has(message, "consoleLink")) {
 				return BbPromise.resolve(false);
 			}
-			
+
 			const typeProvider = message.detail.type.provider;
 			const typeCategory = message.detail.type.category;
 			const pipeline = message.detail.pipeline;
@@ -31,7 +31,7 @@ class CodePipelineParser {
 			const action = message.detail.action;
 			const state = message.detail.state;
 			const time = new Date(message.time);
-			
+
 			// Compose the title based upon the best "one line" summary of the state
 			let slackTitle = pipeline + " >> ";
 			if(typeProvider == "Manual" && typeCategory == "Approval") {
@@ -56,7 +56,7 @@ class CodePipelineParser {
 				color = Slack.COLORS.warning;
 				break;
 			}
-			
+
 			const slackMessage = {
 				attachments: [{
 					fallback: `${pipeline} >> ${stage} is ${state}`,

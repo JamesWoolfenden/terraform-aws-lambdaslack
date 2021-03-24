@@ -9,7 +9,7 @@ class CodePipelineApprovalParser {
 	parse(event) {
 		//console.log("CodePipeline.Approval :: start...");
 		//console.log(_.get(event, "Records[0].Sns.Message", "{}"));
-		return BbPromise.try(() => 
+		return BbPromise.try(() =>
 			JSON.parse(_.get(event, "Records[0].Sns.Message", "{}")))
 		.catch(_.noop) // ignore JSON errors
 		.then(message => {
@@ -18,9 +18,9 @@ class CodePipelineApprovalParser {
 			if (!_.has(message, "approval") || !_.has(message, "consoleLink")) {
 				return BbPromise.resolve(false);
 			}
-			
+
 			console.log("  this IS an APPROVAL message");
-			
+
 			const pipeline = message.approval.pipelineName;
 			const stage = message.approval.stageName;
 			// const action = message.approval.actionName;
@@ -29,7 +29,7 @@ class CodePipelineApprovalParser {
 			const approveLink = message.approval.approvalReviewLink;
 			const customMsg = message.approval.customData;
 			const time = new Date(_.get(event, "Records[0].Sns.Timestamp"));
-			
+
 			const slackTitle = pipeline + " >> APPROVAL REQUIRED for " + stage;
 
 			const slackMessage = {
