@@ -1,4 +1,7 @@
 resource "aws_lambda_function" "awstoslack" {
+  # checkov:skip=CKV_AWS_117:
+  # checkov:skip=CKV_AWS_116:
+  # checkov:skip=CKV_AWS_115:
   function_name    = var.function_name
   handler          = "src/index.handler"
   memory_size      = var.memory_size
