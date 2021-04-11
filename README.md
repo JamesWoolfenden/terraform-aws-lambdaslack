@@ -75,6 +75,7 @@ No modules.
 | <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
 | <a name="input_function_name"></a> [function\_name](#input\_function\_name) | The name of the lambda function | `string` | `"aws-to-slack-Handler"` | no |
 | <a name="input_memory_size"></a> [memory\_size](#input\_memory\_size) | lambda ram | `number` | `256` | no |
+| <a name="input_protocol"></a> [protocol](#input\_protocol) | SNS Subscription Protocol | `string` | `"lambda"` | no |
 | <a name="input_role_name"></a> [role\_name](#input\_role\_name) | The name of the IAM role | `string` | `"aws-to-slack-HandlerRole"` | no |
 | <a name="input_rules"></a> [rules](#input\_rules) | n/a | `list(any)` | n/a | yes |
 | <a name="input_runtime"></a> [runtime](#input\_runtime) | n/a | `string` | `"nodejs6.10"` | no |

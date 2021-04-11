@@ -49,3 +49,14 @@ variable "timeout" {
   type        = number
   description = "lambda timeout"
 }
+
+variable "protocol" {
+  type        = string
+  default     = "lambda"
+  description = "SNS Subscription Protocol"
+
+  validation {
+    condition     = can(regex("application|email-json|email|firehose|http|https|lambda|sms|sqs", var.protocol))
+    error_message = "Expected protocol to be one of [application email-json email firehose http https lambda sms sqs]."
+  }
+}
