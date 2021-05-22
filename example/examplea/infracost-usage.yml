@@ -1,2 +1,11 @@
 version: 0.1
 resource_usage:
+  module.snstoslack.aws_lambda_function.awstoslack:
+    monthly_requests: 0
+    request_duration_ms: 0
+  module.snstoslack.aws_sns_topic_subscription.snstoslack[0]:
+    monthly_requests: 0
+    request_size_kb: 0
+  module.snstoslack.aws_sns_topic_subscription.snstoslack[1]:
+    monthly_requests: 0
+    request_size_kb: 0
