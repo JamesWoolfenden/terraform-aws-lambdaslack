@@ -10,6 +10,7 @@ resource "aws_lambda_function" "awstoslack" {
   timeout          = var.timeout
   filename         = "${path.module}\\lambda.zip"
   source_code_hash = data.archive_file.lambda.output_base64sha256
+  kms_key_arn      = var.kms_key_arn
 
   environment {
     variables = {

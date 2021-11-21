@@ -60,3 +60,8 @@ variable "protocol" {
     error_message = "Expected protocol to be one of [application email-json email firehose http https lambda sms sqs]."
   }
 }
+
+
+variable "kms_key_arn" {
+  description = "The ARN of your CMK"
+}
