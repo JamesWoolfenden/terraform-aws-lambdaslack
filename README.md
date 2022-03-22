@@ -31,18 +31,17 @@ module "lambdaslack" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
 ## Requirements
 
 No requirements.
 
 ## Providers
 
-| Name                                                         | Version |
-| ------------------------------------------------------------ | ------- |
-| <a name="provider_archive"></a> [archive](#provider_archive) | n/a     |
-| <a name="provider_aws"></a> [aws](#provider_aws)             | n/a     |
-| <a name="provider_null"></a> [null](#provider_null)          | n/a     |
+| Name | Version |
+|------|---------|
+| <a name="provider_archive"></a> [archive](#provider\_archive) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+| <a name="provider_null"></a> [null](#provider\_null) | n/a |
 
 ## Modules
 
@@ -50,43 +49,42 @@ No modules.
 
 ## Resources
 
-| Name                                                                                                                                                                 | Type        |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| [aws_cloudwatch_event_target.snstoslack](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_event_target)                        | resource    |
-| [aws_iam_role.awstoslack](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role)                                                      | resource    |
-| [aws_iam_role_policy_attachment.AWSLambdaBasicExecutionRole](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource    |
-| [aws_iam_role_policy_attachment.CloudWatchReadOnlyAccess](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment)    | resource    |
-| [aws_lambda_function.awstoslack](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function)                                        | resource    |
-| [aws_lambda_permission.EventsToLambda](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_permission)                                | resource    |
-| [aws_lambda_permission.SNSToLambda](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_permission)                                   | resource    |
-| [aws_sns_topic_subscription.snstoslack](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic_subscription)                          | resource    |
-| [null_resource.node_modules](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource)                                                  | resource    |
-| [archive_file.lambda](https://registry.terraform.io/providers/hashicorp/archive/latest/docs/data-sources/file)                                                       | data source |
-| [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity)                                        | data source |
-| [aws_iam_policy_document.assumerole](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document)                             | data source |
-| [aws_region.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region)                                                          | data source |
+| Name | Type |
+|------|------|
+| [aws_cloudwatch_event_target.snstoslack](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_event_target) | resource |
+| [aws_iam_role.awstoslack](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
+| [aws_iam_role_policy_attachment.AWSLambdaBasicExecutionRole](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
+| [aws_iam_role_policy_attachment.CloudWatchReadOnlyAccess](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
+| [aws_lambda_function.awstoslack](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function) | resource |
+| [aws_lambda_permission.EventsToLambda](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_permission) | resource |
+| [aws_lambda_permission.SNSToLambda](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_permission) | resource |
+| [aws_sns_topic_subscription.snstoslack](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic_subscription) | resource |
+| [null_resource.node_modules](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
+| [archive_file.lambda](https://registry.terraform.io/providers/hashicorp/archive/latest/docs/data-sources/file) | data source |
+| [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
+| [aws_iam_policy_document.assumerole](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
+| [aws_region.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) | data source |
 
 ## Inputs
 
-| Name                                                                        | Description                                        | Type        | Default                      | Required |
-| --------------------------------------------------------------------------- | -------------------------------------------------- | ----------- | ---------------------------- | :------: |
-| <a name="input_SLACK_CHANNEL"></a> [SLACK_CHANNEL](#input_SLACK_CHANNEL)    | Name of the SLACK Channel                          | `string`    | n/a                          |   yes    |
-| <a name="input_SLACK_HOOK_URL"></a> [SLACK_HOOK_URL](#input_SLACK_HOOK_URL) | The Slack Webhook URL                              | `string`    | n/a                          |   yes    |
-| <a name="input_arns"></a> [arns](#input_arns)                               | n/a                                                | `list(any)` | n/a                          |   yes    |
-| <a name="input_common_tags"></a> [common_tags](#input_common_tags)          | This is to help you add tags to your cloud objects | `map(any)`  | n/a                          |   yes    |
-| <a name="input_function_name"></a> [function_name](#input_function_name)    | The name of the lambda function                    | `string`    | `"aws-to-slack-Handler"`     |    no    |
-| <a name="input_kms_key_arn"></a> [kms_key_arn](#input_kms_key_arn)          | The ARN of your CMK                                | `any`       | n/a                          |   yes    |
-| <a name="input_memory_size"></a> [memory_size](#input_memory_size)          | lambda ram                                         | `number`    | `256`                        |    no    |
-| <a name="input_protocol"></a> [protocol](#input_protocol)                   | SNS Subscription Protocol                          | `string`    | `"lambda"`                   |    no    |
-| <a name="input_role_name"></a> [role_name](#input_role_name)                | The name of the IAM role                           | `string`    | `"aws-to-slack-HandlerRole"` |    no    |
-| <a name="input_rules"></a> [rules](#input_rules)                            | n/a                                                | `list(any)` | n/a                          |   yes    |
-| <a name="input_runtime"></a> [runtime](#input_runtime)                      | n/a                                                | `string`    | `"nodejs6.10"`               |    no    |
-| <a name="input_timeout"></a> [timeout](#input_timeout)                      | lambda timeout                                     | `number`    | `10`                         |    no    |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_SLACK_CHANNEL"></a> [SLACK\_CHANNEL](#input\_SLACK\_CHANNEL) | Name of the SLACK Channel | `string` | n/a | yes |
+| <a name="input_SLACK_HOOK_URL"></a> [SLACK\_HOOK\_URL](#input\_SLACK\_HOOK\_URL) | The Slack Webhook URL | `string` | n/a | yes |
+| <a name="input_arns"></a> [arns](#input\_arns) | n/a | `list(any)` | n/a | yes |
+| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
+| <a name="input_function_name"></a> [function\_name](#input\_function\_name) | The name of the lambda function | `string` | `"aws-to-slack-Handler"` | no |
+| <a name="input_kms_key_arn"></a> [kms\_key\_arn](#input\_kms\_key\_arn) | The ARN of your CMK | `any` | n/a | yes |
+| <a name="input_memory_size"></a> [memory\_size](#input\_memory\_size) | lambda ram | `number` | `256` | no |
+| <a name="input_protocol"></a> [protocol](#input\_protocol) | SNS Subscription Protocol | `string` | `"lambda"` | no |
+| <a name="input_role_name"></a> [role\_name](#input\_role\_name) | The name of the IAM role | `string` | `"aws-to-slack-HandlerRole"` | no |
+| <a name="input_rules"></a> [rules](#input\_rules) | n/a | `list(any)` | n/a | yes |
+| <a name="input_runtime"></a> [runtime](#input\_runtime) | n/a | `string` | `"nodejs6.10"` | no |
+| <a name="input_timeout"></a> [timeout](#input\_timeout) | lambda timeout | `number` | `10` | no |
 
 ## Outputs
 
 No outputs.
-
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Related Projects
