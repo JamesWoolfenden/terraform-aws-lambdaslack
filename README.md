@@ -107,22 +107,39 @@ resource "aws_iam_policy" "terraform_pike" {
             "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": [
-                "ec2:DescribeAccountAttributes"
+                "SNS:GetSubscriptionAttributes",
+                "SNS:Subscribe",
+                "SNS:Unsubscribe"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         },
         {
             "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeAccountAttributes",
+                "ec2:DescribeNetworkInterfaces"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor2",
             "Effect": "Allow",
             "Action": [
                 "events:ListTargetsByRule",
                 "events:PutTargets",
                 "events:RemoveTargets"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         },
         {
-            "Sid": "VisualEditor2",
+            "Sid": "VisualEditor3",
             "Effect": "Allow",
             "Action": [
                 "iam:AttachRolePolicy",
@@ -135,10 +152,25 @@ resource "aws_iam_policy" "terraform_pike" {
                 "iam:ListRolePolicies",
                 "iam:PassRole"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         },
         {
-            "Sid": "VisualEditor3",
+            "Sid": "VisualEditor4",
+            "Effect": "Allow",
+            "Action": [
+                "kms:CreateGrant",
+                "kms:Decrypt",
+                "kms:Encrypt",
+                "kms:GenerateDataKey"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor5",
             "Effect": "Allow",
             "Action": [
                 "lambda:AddPermission",
@@ -152,7 +184,9 @@ resource "aws_iam_policy" "terraform_pike" {
                 "lambda:TagResource",
                 "lambda:UntagResource"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         }
     ]
 })
