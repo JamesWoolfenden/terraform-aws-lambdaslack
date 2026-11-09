@@ -3,7 +3,7 @@
   "dependencies": {
     "bluebird": "^3.5.3",
     "lodash": "^4.17.11",
-    "minimist": ">=0.2.1"
+    "minimist": "^1.2.8"
   },
   "description": "Forward AWS Notification Messages to Slack",
   "devDependencies": {
